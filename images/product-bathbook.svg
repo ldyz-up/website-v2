@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dff0f7"/>
+      <stop offset="1" stop-color="#bcdce9"/>
+    </linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b6e8f"/>
+      <stop offset="1" stop-color="#0a5570"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="20" fill="url(#bg)"/>
+  <circle cx="330" cy="60" r="26" fill="#ffffff" opacity="0.5"/>
+  <circle cx="70" cy="70" r="14" fill="#ffffff" opacity="0.6"/>
+  <circle cx="350" cy="220" r="10" fill="#ffffff" opacity="0.55"/>
+  <circle cx="60" cy="230" r="20" fill="#ffffff" opacity="0.4"/>
+  <ellipse cx="200" cy="236" rx="110" ry="16" fill="#0a5570" opacity="0.12"/>
+  <path d="M200 78c-24-18-50-23-70-21v118c20-2 46 3 70 21 24-18 50-23 70-21V57c-20-2-46 3-70 21z" fill="url(#book)"/>
+  <path d="M200 78v118" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <path d="M150 108c12 2.5 26 1 36-7M150 126c12 2.5 26 1 36-7" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <path d="M214 101c10 8 24 9.5 36 7M214 119c10 8 24 9.5 36 7" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <path d="M150 158c16 8 34 9 50 3M200 162v-6M244 161c16 6 34 5 50-3" stroke="#8fc9de" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M120 258c26 12 56 14 80 6M200 264v-6M280 258c26 12 56 14 80 6" stroke="#6fb4cd" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+</svg>
