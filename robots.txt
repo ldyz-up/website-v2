@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://longdeyizhi.com/sitemap.xml
