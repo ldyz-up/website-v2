@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://longdeyizhi.com/sitemap.xml
+Sitemap: https://ldyzgroup.com/sitemap.xml

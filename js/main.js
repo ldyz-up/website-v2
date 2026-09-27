@@ -441,6 +441,8 @@
       b.classList.toggle("active", b.dataset.lang === lang);
       b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
     });
+    const mobileLangSelect = document.getElementById("mobileLangSelect");
+    if (mobileLangSelect) mobileLangSelect.value = lang;
   }
 
   /* ---------- 语言切换：页首与询价区共用 ---------- */
@@ -450,6 +452,12 @@
     hasExplicitLanguageChoice = true;
     applyLang(btn.dataset.lang, true);
     try { localStorage.setItem(STORAGE_KEY, btn.dataset.lang); } catch (err) { /* 忽略 */ }
+  });
+  const mobileLangSelect = document.getElementById("mobileLangSelect");
+  if (mobileLangSelect) mobileLangSelect.addEventListener("change", function (e) {
+    hasExplicitLanguageChoice = true;
+    applyLang(e.target.value, true);
+    try { localStorage.setItem(STORAGE_KEY, e.target.value); } catch (err) { /* Continue without persistence. */ }
   });
 
   /* ---------- 移动端菜单 ---------- */

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Bath Books for Children's Brands | LongDe Yizhi</title>
   <meta name="description" content="Develop custom waterproof bath books for children's brands and importers. Discuss materials, page construction, printing, packaging and target market requirements with our team.">
-  <link rel="canonical" href="https://longdeyizhi.com/bath-books.html">
+  <link rel="canonical" href="https://ldyzgroup.com/bath-books.html">
   <link rel="icon" type="image/png" href="images/logo.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bath-books.css">
+  <link rel="stylesheet" href="css/style.css?v=20260927-2">
+  <link rel="stylesheet" href="css/bath-books.css?v=20260927-2">
 </head>
 <body>
   <header class="site-header bath-header">
@@ -26,6 +26,10 @@
       <a href="index.html?category_id=baby&amp;product=Custom%20bath%20book#contact" class="btn btn-primary header-quote" data-i18n="quote" data-quote-link>Request a Quote</a>
       <div class="lang-switch bath-lang-switch" id="langSwitch" role="group" aria-label="Language">
         <button type="button" class="lang-icon-btn" data-lang="en">EN</button><button type="button" class="lang-icon-btn" data-lang="zh">中</button><button type="button" class="lang-icon-btn" data-lang="zh_tw">繁</button><button type="button" class="lang-icon-btn" data-lang="ja">日</button><button type="button" class="lang-icon-btn" data-lang="ko">한</button><button type="button" class="lang-icon-btn" data-lang="fr">FR</button>
+        <select class="mobile-lang-select" id="mobileLangSelect" aria-label="Choose website language">
+          <option value="en">EN</option><option value="zh">中文</option><option value="zh_tw">繁中</option>
+          <option value="ja">日本語</option><option value="ko">한국어</option><option value="fr">FR</option>
+        </select>
       </div>
     </div>
   </header>
@@ -40,7 +44,7 @@
           <p data-i18n="hero_desc">Explore our waterproof product range for baby and children's brands. We support OEM and ODM development across materials, shape, printing and packaging.</p>
           <a class="btn btn-primary" href="index.html?category_id=baby&amp;product=Custom%20bath%20book#contact" data-i18n="quote" data-quote-link>Request a Quote</a>
         </div>
-        <img class="bath-hero-image" src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids.png" alt="Bath book and waterproof kids storage box" fetchpriority="high">
+        <img class="bath-hero-image" src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg" alt="Bath book and waterproof kids storage box" fetchpriority="high">
       </div>
     </section>
 
@@ -176,16 +180,18 @@
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang === 'zh_tw' ? 'zh-TW' : lang;
         document.querySelectorAll('[data-i18n]').forEach(function (el) { if (t[el.dataset.i18n]) el.textContent = t[el.dataset.i18n]; });
         document.querySelectorAll('#langSwitch button').forEach(function (button) { button.classList.toggle('active', button.dataset.lang === lang); });
+        document.getElementById('mobileLangSelect').value = lang;
         document.querySelectorAll('[data-quote-link]').forEach(function (link) {
           link.href = 'index.html?category_id=baby&product=Custom%20bath%20book&lang=' + encodeURIComponent(lang) + '#contact';
         });
-        gallery.innerHTML = bookNumbers.map(function (n) { const id = String(n).padStart(2, '0'); const src = dir + 'bath-book-' + id + '.png'; return '<button class="bath-card" type="button" data-image="' + src + '" aria-label="' + t.book + id + '"><img src="' + src + '" alt="' + t.book + id + '" loading="lazy"><span>' + t.book + id + '</span></button>'; }).join('');
+        gallery.innerHTML = bookNumbers.map(function (n) { const id = String(n).padStart(2, '0'); const src = dir + 'bath-book-' + id + '.png'; const thumb = dir + 'bath-book-' + id + '-thumb.jpg'; return '<button class="bath-card" type="button" data-image="' + src + '" aria-label="' + t.book + id + '"><img src="' + thumb + '" alt="' + t.book + id + '" loading="lazy" decoding="async"><span>' + t.book + id + '</span></button>'; }).join('');
         galleryMore.textContent = galleryLabels[lang][galleryExpanded ? 1 : 0];
       }
       let preferred = 'en';
       try { preferred = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('longde_site_lang') || 'en'; } catch (error) { /* File previews may block storage. */ }
       applyLang(copy[preferred] ? preferred : 'en');
       document.getElementById('langSwitch').addEventListener('click', function (event) { const button = event.target.closest('button[data-lang]'); if (!button) return; try { localStorage.setItem('longde_site_lang', button.dataset.lang); } catch (error) { /* Continue without persistence. */ } applyLang(button.dataset.lang); });
+      document.getElementById('mobileLangSelect').addEventListener('change', function (event) { try { localStorage.setItem('longde_site_lang', event.target.value); } catch (error) { /* Continue without persistence. */ } applyLang(event.target.value); });
       galleryMore.addEventListener('click', function () {
         galleryExpanded = !galleryExpanded;
         gallery.classList.toggle('is-expanded', galleryExpanded);
