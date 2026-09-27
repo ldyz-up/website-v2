@@ -63,6 +63,7 @@
             </div>
             <p class="product-visual-note" id="bathVisualDisclosure"></p>
             <div class="bath-gallery" id="bathGallery"></div>
+            <button class="bath-gallery-more" id="bathGalleryMore" type="button" aria-controls="bathGallery" aria-expanded="false"></button>
           </div>
         </div>
       </div>
@@ -120,8 +121,19 @@
       const bookNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
       const dir = 'website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Bath Book/';
       const gallery = document.getElementById('bathGallery');
+      const galleryMore = document.getElementById('bathGalleryMore');
       const lightbox = document.getElementById('bathLightbox');
       const preview = document.getElementById('bathLightboxImage');
+      const galleryLabels = {
+        en: ['View all 16 bath books', 'Show fewer bath books'],
+        zh: ['查看全部 16 本洗澡书', '收起洗澡书'],
+        zh_tw: ['查看全部 16 本洗澡書', '收起洗澡書'],
+        ja: ['全16冊を見る', '表示を減らす'],
+        ko: ['목욕책 16권 모두 보기', '간략히 보기'],
+        fr: ['Voir les 16 livres de bain', 'Réduire la galerie']
+      };
+      let galleryExpanded = false;
+      let activeLanguage = 'en';
       const copy = {
         en: { nav_products:'Products', quote:'Request a Quote', crumb:'Bath Book and Waterproof Kids Products', hero_tag:'BATH BOOK AND WATERPROOF KIDS PRODUCTS', hero_title:'Bath books and waterproof kids products, made for your brand.', hero_desc:'Explore our waterproof product range for baby and children’s brands. We support OEM and ODM development across materials, shape, printing and packaging.', bath_tag:'BATH BOOK', bath_title:'Bath book styles', bath_desc:'Click a product image to view it in detail. These styles are shown as examples of our manufacturing capability.', kids_tag:'KIDS PRODUCTS', kids_title:'Waterproof kids storage products', kids_desc:'A practical, waterproof product format with room for your own colours, surface graphics and branding. Shown here with an original sea-life print as a customisation example.', custom_cta:'Discuss a custom design', cap_tag:'PRODUCT CAPABILITIES', cap_title:'Made to your specification', material_title:'Materials', material_desc:'EVA, PVC and TPU material options can be selected according to product use, softness and design requirements.', print_title:'Printing', print_desc:'UV printing, screen printing and other decoration options are available to suit your artwork and surface requirements.', supply_title:'Material supply', supply_desc:'We work with established raw-material supply partners to support consistent quality and reliable project development.', safety_tag:'SAFETY & COMPLIANCE', safety_title:'Testing support for your target market', safety_intro:'Our bath books and waterproof kids products can be manufactured and tested to meet applicable safety requirements for major international markets.', japan:'Children’s PSC (子供PSC) and applicable Japanese toy safety requirements', korea:'KC Toy Safety Requirements', germany:'EU Toy Safety Requirements, REACH, CE', safety_note:'Third-party testing can be arranged according to the customer’s target market, product specifications and applicable requirements.', custom_tag:'CUSTOMISATION', custom_title:'Built around your product brief.', custom_1:'Materials & softness', custom_2:'Shape & page count', custom_3:'Artwork & printing', custom_4:'Packaging & labelling', project_cta:'Discuss your project', book:'Bath Book ' },
         zh: { nav_products:'产品', quote:'获取报价', crumb:'洗澡书与防水儿童产品', hero_tag:'洗澡书与防水儿童产品', hero_title:'为您的品牌定制洗澡书与防水儿童产品。', hero_desc:'探索面向婴童品牌的防水产品系列。我们提供材料、造型、印刷与包装的一站式 OEM / ODM 开发支持。', bath_tag:'洗澡书', bath_title:'洗澡书款式', bath_desc:'点击产品图片即可查看细节。这些款式展示了我们的制造能力。', kids_tag:'儿童产品', kids_title:'防水儿童收纳产品', kids_desc:'实用的防水产品形式，可根据您的需求定制颜色、表面图案与品牌元素。图示为原创海洋主题印刷示例。', custom_cta:'洽谈定制设计', cap_tag:'产品能力', cap_title:'按您的需求制造', material_title:'产品材质', material_desc:'可根据产品用途、柔软度和设计要求选择 EVA、PVC、TPU 等材料。', print_title:'印刷工艺', print_desc:'支持 UV 印刷、丝印及其他表面装饰工艺，以匹配您的图稿与表面效果要求。', supply_title:'原材料供应', supply_desc:'我们与优质原材料供应合作伙伴协作，支持稳定品质与可靠的项目开发。', safety_tag:'安全与合规', safety_title:'为您的目标市场提供测试支持', safety_intro:'我们的洗澡书与防水儿童产品可按主要国际市场的适用安全要求进行制造与测试。', japan:'儿童 PSC（子供PSC）及适用的日本玩具安全要求', korea:'KC 玩具安全要求', germany:'欧盟玩具安全要求、REACH、CE', safety_note:'可根据客户的目标市场、产品规格和适用要求安排第三方测试。', custom_tag:'定制服务', custom_title:'围绕您的产品需求开发。', custom_1:'材料与柔软度', custom_2:'形状与页数', custom_3:'图稿与印刷', custom_4:'包装与标签', project_cta:'洽谈您的项目', book:'洗澡书 ' },
@@ -155,6 +167,7 @@
         fr: 'Les références ci-dessus sont des exemples de discussion. Elles ne signifient pas que LDYZ détient ces certificats ni qu’un produit est conforme. Les exigences et essais applicables doivent être confirmés pour chaque produit et marché de destination.'
       };
       function applyLang(lang) {
+        activeLanguage = lang;
         const t = Object.assign({}, copy[lang] || copy.en, bsciCopy[lang] || bsciCopy.en);
         document.getElementById('bathVisualDisclosure').textContent = visualDisclosure[lang] || visualDisclosure.en;
         document.getElementById('regulatoryDisclosure').textContent = regulatoryDisclosure[lang] || regulatoryDisclosure.en;
@@ -167,11 +180,18 @@
           link.href = 'index.html?category_id=baby&product=Custom%20bath%20book&lang=' + encodeURIComponent(lang) + '#contact';
         });
         gallery.innerHTML = bookNumbers.map(function (n) { const id = String(n).padStart(2, '0'); const src = dir + 'bath-book-' + id + '.png'; return '<button class="bath-card" type="button" data-image="' + src + '" aria-label="' + t.book + id + '"><img src="' + src + '" alt="' + t.book + id + '" loading="lazy"><span>' + t.book + id + '</span></button>'; }).join('');
+        galleryMore.textContent = galleryLabels[lang][galleryExpanded ? 1 : 0];
       }
       let preferred = 'en';
       try { preferred = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('longde_site_lang') || 'en'; } catch (error) { /* File previews may block storage. */ }
       applyLang(copy[preferred] ? preferred : 'en');
       document.getElementById('langSwitch').addEventListener('click', function (event) { const button = event.target.closest('button[data-lang]'); if (!button) return; try { localStorage.setItem('longde_site_lang', button.dataset.lang); } catch (error) { /* Continue without persistence. */ } applyLang(button.dataset.lang); });
+      galleryMore.addEventListener('click', function () {
+        galleryExpanded = !galleryExpanded;
+        gallery.classList.toggle('is-expanded', galleryExpanded);
+        galleryMore.setAttribute('aria-expanded', String(galleryExpanded));
+        galleryMore.textContent = galleryLabels[activeLanguage][galleryExpanded ? 1 : 0];
+      });
       gallery.addEventListener('click', function (event) {
         const card = event.target.closest('.bath-card');
         if (!card) return;
