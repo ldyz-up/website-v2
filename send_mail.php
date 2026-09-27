@@ -277,28 +277,39 @@ function handle_inquiry()
     $totalBytes = 0;
     foreach (array('preview_file', 'print_artwork', 'reference_file') as $field) {
         if (!isset($_FILES[$field]) || $_FILES[$field]['error'] === UPLOAD_ERR_NO_FILE) continue;
-        $file = $_FILES[$field];
-        if ($file['error'] !== UPLOAD_ERR_OK || !is_uploaded_file($file['tmp_name'])) {
-            http_response_code(400);
-            echo json_encode(array('ok' => false, 'email_sent' => false, 'msg' => 'file upload failed'));
-            exit;
+        $batch = $_FILES[$field];
+        $files = array();
+        if (is_array($batch['name'])) {
+            foreach (array_keys($batch['name']) as $index) {
+                $files[] = array('name' => $batch['name'][$index], 'type' => $batch['type'][$index], 'tmp_name' => $batch['tmp_name'][$index], 'error' => $batch['error'][$index], 'size' => $batch['size'][$index]);
+            }
+        } else {
+            $files[] = $batch;
         }
-        $totalBytes += (int)$file['size'];
-        if ($totalBytes > 15 * 1024 * 1024) {
-            http_response_code(413);
-            echo json_encode(array('ok' => false, 'email_sent' => false, 'msg' => 'attachments exceed 15 MB total'));
-            exit;
+        foreach ($files as $file) {
+            if ($file['error'] === UPLOAD_ERR_NO_FILE) continue;
+            if ($file['error'] !== UPLOAD_ERR_OK || !is_uploaded_file($file['tmp_name'])) {
+                http_response_code(400);
+                echo json_encode(array('ok' => false, 'email_sent' => false, 'msg' => 'file upload failed'));
+                exit;
+            }
+            $totalBytes += (int)$file['size'];
+            if ($totalBytes > 15 * 1024 * 1024) {
+                http_response_code(413);
+                echo json_encode(array('ok' => false, 'email_sent' => false, 'msg' => 'attachments exceed 15 MB total'));
+                exit;
+            }
+            $safeName = basename(str_replace('\\', '/', $file['name']));
+            $safeName = preg_replace('/[^A-Za-z0-9._-]/', '_', $safeName);
+            if ($safeName === '' || preg_match('/\.(php[0-9]?|phtml|phar|html?)$/i', $safeName)) $safeName = 'inquiry-attachment.bin';
+            $type = 'application/octet-stream';
+            if (function_exists('finfo_open')) {
+                $fi = finfo_open(FILEINFO_MIME_TYPE);
+                if ($fi) { $detected = finfo_file($fi, $file['tmp_name']); finfo_close($fi); if (is_string($detected) && preg_match('/^[A-Za-z0-9.+-]+\/[A-Za-z0-9.+-]+$/', $detected)) $type = $detected; }
+            }
+            if ($field === 'preview_file') $safeName = 'binder-configuration-preview.svg';
+            $attachments[] = array('path' => $file['tmp_name'], 'name' => $safeName, 'type' => $type);
         }
-        $safeName = basename(str_replace('\\', '/', $file['name']));
-        $safeName = preg_replace('/[^A-Za-z0-9._-]/', '_', $safeName);
-        if ($safeName === '' || preg_match('/\.(php[0-9]?|phtml|phar|html?)$/i', $safeName)) $safeName = 'inquiry-attachment.bin';
-        $type = 'application/octet-stream';
-        if (function_exists('finfo_open')) {
-            $fi = finfo_open(FILEINFO_MIME_TYPE);
-            if ($fi) { $detected = finfo_file($fi, $file['tmp_name']); finfo_close($fi); if (is_string($detected) && preg_match('/^[A-Za-z0-9.+-]+\/[A-Za-z0-9.+-]+$/', $detected)) $type = $detected; }
-        }
-        if ($field === 'preview_file') $safeName = 'binder-configuration-preview.svg';
-        $attachments[] = array('path' => $file['tmp_name'], 'name' => $safeName, 'type' => $type);
     }
 
     $subject = '【官网询盘】' . ($company !== '' ? $company : $name)

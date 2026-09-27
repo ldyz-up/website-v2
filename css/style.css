@@ -767,6 +767,8 @@ textarea:focus-visible {
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #98A2AD; }
+.form-attachment-note { display: block; margin-top: 7px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; }
+.form-group input[type="file"] { height: auto; padding: 10px 12px; background: #fff; }
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {

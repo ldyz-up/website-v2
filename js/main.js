@@ -566,6 +566,13 @@
     const product = getFormVal("cfProduct");
     const qty = getFormVal("cfQty");
     const msg = getFormVal("cfMsg");
+    const attachmentInput = document.getElementById("cfAttachments");
+    const attachmentBytes = Array.from(attachmentInput.files).reduce(function (sum, file) { return sum + file.size; }, 0);
+
+    if (attachmentBytes > 15 * 1024 * 1024) {
+      showModal("err", t.form_attachments_too_large);
+      return;
+    }
 
     // 必填校验：名称、公司名称、邮箱（邮箱必须是正确的邮件格式）
     let valid = true;

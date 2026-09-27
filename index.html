@@ -360,6 +360,11 @@
               <label for="cfMsg" data-i18n="form_msg">Message</label>
               <textarea id="cfMsg" name="message" rows="5" data-i18n-ph="form_msg"></textarea>
             </div>
+            <div class="form-group">
+              <label for="cfAttachments" data-i18n="form_attachments">Attachments (optional)</label>
+              <input type="file" id="cfAttachments" name="reference_file[]" accept="image/*,.pdf,.ai,.psd,.dxf,.dwg,.doc,.docx,.xls,.xlsx" multiple>
+              <small class="form-attachment-note" data-i18n="form_attachments_note">Add drawings, reference images or a logo. Up to 15 MB total.</small>
+            </div>
             <button type="submit" class="btn btn-primary btn-block" data-i18n="form_send">Request a Quote</button>
             <p class="form-note" data-i18n="form_note">We will reply to your inquiry by email as soon as possible.</p>
           </form>
