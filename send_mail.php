@@ -245,6 +245,16 @@ function handle_inquiry()
     $market   = isset($_POST['targetMarket']) ? cut_str(trim($_POST['targetMarket']), 120) : '';
     $msg      = isset($_POST['message']) ? cut_str(trim($_POST['message']), 5000) : '';
     $lang     = isset($_POST['lang']) ? cut_str(trim($_POST['lang']), 10) : '';
+    $sourceOwner = isset($_POST['original_source_owner']) ? strtoupper(cut_str(trim($_POST['original_source_owner']), 20)) : 'SHARED';
+    if (!in_array($sourceOwner, array('LDYZ', 'LDPLASTIC'), true)) $sourceOwner = 'SHARED';
+    $sourceChannel = isset($_POST['original_utm_source']) ? cut_str(trim($_POST['original_utm_source']), 80) : 'direct';
+    $sourceMedium = isset($_POST['original_utm_medium']) ? cut_str(trim($_POST['original_utm_medium']), 80) : 'none';
+    $sourceCampaign = isset($_POST['original_utm_campaign']) ? cut_str(trim($_POST['original_utm_campaign']), 120) : '';
+    $lastSourceOwner = isset($_POST['last_source_owner']) ? strtoupper(cut_str(trim($_POST['last_source_owner']), 20)) : 'SHARED';
+    if (!in_array($lastSourceOwner, array('LDYZ', 'LDPLASTIC'), true)) $lastSourceOwner = 'SHARED';
+    $lastSourceChannel = isset($_POST['last_utm_source']) ? cut_str(trim($_POST['last_utm_source']), 80) : 'direct';
+    $lastSourceMedium = isset($_POST['last_utm_medium']) ? cut_str(trim($_POST['last_utm_medium']), 80) : 'none';
+    $lastLandingPage = isset($_POST['last_landing_page']) ? cut_str(trim($_POST['last_landing_page']), 300) : '';
     $configJson = isset($_POST['binder_configuration']) ? cut_str($_POST['binder_configuration'], 30000) : '';
     $configuration = $configJson !== '' ? json_decode($configJson, true) : null;
 
@@ -312,7 +322,8 @@ function handle_inquiry()
         }
     }
 
-    $subject = '【官网询盘】' . ($company !== '' ? $company : $name)
+    $ownerLabel = $sourceOwner === 'LDYZ' ? '龙德益智 LDYZ' : ($sourceOwner === 'LDPLASTIC' ? '龙德塑胶 LDPLASTIC' : '共享/未分配');
+    $subject = '[归属:' . $ownerLabel . '][' . $sourceChannel . '] 【官网询盘】' . ($company !== '' ? $company : $name)
              . ($product !== '' ? ' - ' . $product : '');
 
     $esc = function ($v) {
@@ -330,6 +341,11 @@ function handle_inquiry()
         array('数量', $qty !== '' ? $qty : '-'),
         array('目标市场', $market !== '' ? $market : '-'),
         array('语言', $lang !== '' ? $lang : '-'),
+        array('客户归属（首次来源）', $sourceOwner),
+        array('首次获客来源', $sourceChannel . ' / ' . $sourceMedium . ($sourceCampaign !== '' ? ' / ' . $sourceCampaign : '')),
+        array('最近来源归属', $lastSourceOwner),
+        array('最近访问来源', $lastSourceChannel . ' / ' . $lastSourceMedium),
+        array('最近落地页面', $lastLandingPage !== '' ? $lastLandingPage : '-'),
         array('留言内容', $msg !== '' ? $msg : '-'),
         array('来源页面', isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== '' ? $_SERVER['HTTP_REFERER'] : '-'),
         array('提交时间', date('Y-m-d H:i:s')),

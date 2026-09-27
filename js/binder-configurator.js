@@ -234,6 +234,7 @@
     const total = files.reduce((sum, file) => sum + file.size, previewBlob.size);
     if (total > 15 * 1024 * 1024) { status.textContent = tr("Attachments must be 15 MB or smaller in total. Remove a file and try again."); return; }
     const payload = new FormData(inquiry);
+    if (window.LDYZAttribution) window.LDYZAttribution.addToFormData(payload);
     payload.set("category", "Stationery & Office Products");
     payload.set("product", "Custom ring binder · " + c.productCode);
     payload.set("inquiryQuantity", $("inquiryQuantity").value.trim());

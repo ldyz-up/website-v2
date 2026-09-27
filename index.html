@@ -362,7 +362,11 @@
             </div>
             <div class="form-group">
               <label for="cfAttachments" data-i18n="form_attachments">Attachments (optional)</label>
-              <input type="file" id="cfAttachments" name="reference_file[]" accept="image/*,.pdf,.ai,.psd,.dxf,.dwg,.doc,.docx,.xls,.xlsx" multiple>
+              <div class="file-picker">
+                <input type="file" id="cfAttachments" name="reference_file[]" accept="image/*,.pdf,.ai,.psd,.dxf,.dwg,.doc,.docx,.xls,.xlsx" multiple hidden aria-hidden="true" tabindex="-1">
+                <button type="button" id="cfChooseFiles" class="file-picker-button" data-i18n="form_choose_files">Choose files</button>
+                <span id="cfAttachmentNames" class="file-picker-names" data-i18n="form_no_files" aria-live="polite">No files selected</span>
+              </div>
               <small class="form-attachment-note" data-i18n="form_attachments_note">Add drawings, reference images or a logo. Up to 15 MB total.</small>
             </div>
             <button type="submit" class="btn btn-primary btn-block" data-i18n="form_send">Request a Quote</button>
@@ -445,6 +449,7 @@
     </div>
   </div>
 
+  <script src="js/attribution.js?v=20260927-1" defer></script>
   <script src="js/analytics.js?v=20260927-2"></script>
   <script src="js/translations.js?v=20260927-2"></script>
   <script src="js/main.js?v=20260927-2"></script>

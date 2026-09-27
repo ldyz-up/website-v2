@@ -495,6 +495,20 @@
   /* ---------- 询价表单：优先提交到服务器 send_mail.php ---------- */
   const contactForm = document.getElementById("contactForm");
   const submitBtn = contactForm.querySelector("button[type=submit]");
+  const attachmentInput = document.getElementById("cfAttachments");
+  const chooseAttachmentsBtn = document.getElementById("cfChooseFiles");
+  const attachmentNames = document.getElementById("cfAttachmentNames");
+  chooseAttachmentsBtn.addEventListener("click", function () { attachmentInput.click(); });
+  attachmentInput.addEventListener("change", function () {
+    const files = Array.from(attachmentInput.files);
+    if (files.length) {
+      attachmentNames.removeAttribute("data-i18n");
+      attachmentNames.textContent = files.map(function (file) { return file.name; }).join(", ");
+    } else {
+      attachmentNames.dataset.i18n = "form_no_files";
+      attachmentNames.textContent = TRANSLATIONS[currentLang].form_no_files;
+    }
+  });
   const modalOverlay = document.getElementById("formModal");
   const modalIcon = document.getElementById("modalIcon");
   const modalTitle = document.getElementById("modalTitle");
@@ -566,7 +580,6 @@
     const product = getFormVal("cfProduct");
     const qty = getFormVal("cfQty");
     const msg = getFormVal("cfMsg");
-    const attachmentInput = document.getElementById("cfAttachments");
     const attachmentBytes = Array.from(attachmentInput.files).reduce(function (sum, file) { return sum + file.size; }, 0);
 
     if (attachmentBytes > 15 * 1024 * 1024) {
@@ -591,6 +604,7 @@
 
     const formData = new FormData(contactForm);
     formData.set("lang", currentLang);
+    if (window.LDYZAttribution) window.LDYZAttribution.addToFormData(formData);
 
     let endpoint = "send_mail.php";
     let viaWeb3 = false;
@@ -598,8 +612,13 @@
       viaWeb3 = true;
       endpoint = "https://api.web3forms.com/submit";
       formData.set("access_key", FORM_CONFIG.web3forms_key);
+      const sourceOwner = formData.get("original_source_owner") || "SHARED";
+      const ownerLabel = sourceOwner === "LDYZ" ? "龙德益智 LDYZ" :
+        sourceOwner === "LDPLASTIC" ? "龙德塑胶 LDPLASTIC" : "共享/未分配";
       formData.set(
         "subject",
+        "[归属:" + ownerLabel + "]" +
+        "[" + (formData.get("original_utm_source") || "direct") + "] " +
         "[" + LANG_NAMES[currentLang] + "] " + t.mail_subject +
         (company ? " - " + company : "") +
         (product ? " - " + product : "")
@@ -618,6 +637,8 @@
             language: currentLang
           });
           contactForm.reset();
+          attachmentNames.dataset.i18n = "form_no_files";
+          attachmentNames.textContent = t.form_no_files;
           showModal("ok", t.form_success);
         } else {
           showModal("err", t.form_error);

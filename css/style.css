@@ -768,7 +768,11 @@ textarea:focus-visible {
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #98A2AD; }
 .form-attachment-note { display: block; margin-top: 7px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; }
-.form-group input[type="file"] { height: auto; padding: 10px 12px; background: #fff; }
+.file-picker { display: flex; align-items: center; gap: 11px; min-height: 50px; padding: 6px 10px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: var(--cream); }
+.file-picker-button { flex: 0 0 auto; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; font: inherit; font-size: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
+.file-picker-button:hover { border-color: var(--softblue); background: #f4f8fc; }
+.file-picker-button:focus-visible { outline: 3px solid color-mix(in srgb, var(--softblue) 35%, transparent); outline-offset: 2px; }
+.file-picker-names { min-width: 0; overflow-wrap: anywhere; color: var(--ink-soft); font-size: 13px; line-height: 1.4; }
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
