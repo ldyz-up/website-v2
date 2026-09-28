@@ -304,7 +304,7 @@
             </div>
           </div>
 
-          <!-- 询价表单（提交到服务器 send_mail.php 收件脚本；本地预览时退回邮件客户端） -->
+          <!-- 询价表单通过 Cloudflare Worker 发送到 sales@longdeyizhi.com -->
           <form class="contact-form reveal" id="contactForm" novalidate>
             <!-- 蜜罐反垃圾字段：真人不可见，机器人填了会被丢弃 -->
             <input type="text" name="website" id="cfWebsite" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -452,6 +452,6 @@
   <script src="js/attribution.js?v=20260927-1" defer></script>
   <script src="js/analytics.js?v=20260927-2"></script>
   <script src="js/translations.js?v=20260927-2"></script>
-  <script src="js/main.js?v=20260927-2"></script>
+  <script src="js/main.js?v=20260928-1"></script>
 </body>
 </html>

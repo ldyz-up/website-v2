@@ -247,9 +247,9 @@
     if (reference) payload.set("reference_file", reference);
     button.disabled = true; status.textContent = tr("Sending your inquiry and attachments…");
     try {
-      const response = await fetch("send_mail.php", { method: "POST", body: payload, headers: { Accept: "application/json" } });
+      const response = await fetch("https://forms.ldyzgroup.com/submit", { method: "POST", body: payload, headers: { Accept: "application/json" } });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok || result.ok !== true || result.email_sent !== true) throw new Error(result.msg || "delivery failed");
+      if (!response.ok || result.success !== true) throw new Error(result.message || "delivery failed");
       status.textContent = tr("Your inquiry was accepted by the mail server. Our team will reply within one working day.");
       ["name", "company", "email", "contact_method", "message"].forEach((key) => { const field = inquiry.elements.namedItem(key); if (field) field.value = ""; });
       inquiry.elements.namedItem("consent").checked = false;
