@@ -263,21 +263,21 @@
     {
       "id": "bath-books-image-1",
       "original": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
-      "src": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
+      "src": "/website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
       "label": "页面图片 1",
       "alt": "Bath book and waterproof kids storage box"
     },
     {
       "id": "bath-books-image-2",
       "original": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Kids Products/blue-kids-storage-box-v1.png",
-      "src": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Kids Products/blue-kids-storage-box-v1.png",
+      "src": "/website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Kids Products/blue-kids-storage-box-v1.png",
       "label": "页面图片 2",
       "alt": "Waterproof kids storage box with original sea-creature print"
     },
     {
       "id": "bath-books-image-3",
       "original": "images/bsci-logo-transparent.png",
-      "src": "images/bsci-logo-transparent.png",
+      "src": "/images/bsci-logo-transparent.png",
       "label": "页面图片 3",
       "alt": "BSCI Business Social Compliance Initiative logo"
     }

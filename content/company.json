@@ -107,28 +107,28 @@
     {
       "id": "logo",
       "original": "images/logo.png",
-      "src": "images/logo.png",
+      "src": "/images/logo.png",
       "label": "网站 Logo",
       "alt": "LongDe Yizhi Logo"
     },
     {
       "id": "qr-wechat-1",
       "original": "images/qr-wechat-1.png",
-      "src": "images/qr-wechat-1.png",
+      "src": "/images/qr-wechat-1.png",
       "label": "客服二维码 · qr-wechat-1.png",
       "alt": "WeChat Support 1"
     },
     {
       "id": "qr-wechat-2",
       "original": "images/qr-wechat-2.png",
-      "src": "images/qr-wechat-2.png",
+      "src": "/images/qr-wechat-2.png",
       "label": "客服二维码 · qr-wechat-2.png",
       "alt": "WeChat Support 2"
     },
     {
       "id": "qr-line",
       "original": "images/qr-line.png",
-      "src": "images/qr-line.png",
+      "src": "/images/qr-line.png",
       "label": "客服二维码 · qr-line.png",
       "alt": "LINE Support"
     }

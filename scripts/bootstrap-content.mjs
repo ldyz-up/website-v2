@@ -9,7 +9,8 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 try{await access(path.join(root,'content/company.json'));throw new Error('已有后台内容，禁止再次迁移覆盖。');}catch(error){if(error.code!=='ENOENT')throw error;}
 await mkdir(path.join(root,'content/pages'),{recursive:true});await mkdir(path.join(root,'content/products'),{recursive:true});
 const read=name=>readFile(path.join(root,name),'utf8');
-const json=async(name,value)=>writeFile(path.join(root,name),JSON.stringify(value,null,2)+'\n');
+function publicImages(value,key=''){if(typeof value==='string'&&['src','image','thumbnail','thumbnail_for','gallery'].includes(key)&&value&&!/^(\/|[a-z]+:)/i.test(value))return '/'+value;if(Array.isArray(value))return value.map(item=>publicImages(item,key));if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,publicImages(v,k)]));return value;}
+const json=async(name,value)=>writeFile(path.join(root,name),JSON.stringify(name.startsWith('content/')?publicImages(value):value,null,2)+'\n');
 const T=vm.runInNewContext(await read('js/translations.js')+'\nJSON.parse(JSON.stringify(TRANSLATIONS));');
 function literal(source,token){let start=source.indexOf(token);if(start<0)throw new Error('无法定位 '+token);start=source.indexOf('{',start);let depth=0,quote='',escaped=false;for(let i=start;i<source.length;i++){const c=source[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote='';continue;}if(c==='"'||c==="'"||c==='`'){quote=c;continue;}if(c==='{')depth++;if(c==='}'&&!--depth)return vm.runInNewContext('('+source.slice(start,i+1)+')');}throw new Error('未闭合的内容对象');}
 const bathSource=await read('bath-books.html'),bathCopy=literal(bathSource,'const copy ='),bsci=literal(bathSource,'const bsciCopy ='),visual=literal(bathSource,'const visualDisclosure ='),regulatory=literal(bathSource,'const regulatoryDisclosure =');

@@ -263,14 +263,14 @@
     {
       "id": "bags-pouches-image-1",
       "original": "images/product-filepocket.svg",
-      "src": "images/product-filepocket.svg",
+      "src": "/images/product-filepocket.svg",
       "label": "页面图片 1",
       "alt": "Custom pouch product illustration"
     },
     {
       "id": "bags-pouches-image-2",
       "original": "images/bsci-logo-transparent.png",
-      "src": "images/bsci-logo-transparent.png",
+      "src": "/images/bsci-logo-transparent.png",
       "label": "页面图片 2",
       "alt": "BSCI Business Social Compliance Initiative logo"
     }

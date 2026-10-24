@@ -869,14 +869,14 @@
     {
       "id": "index-image-1",
       "original": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
-      "src": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
+      "src": "/website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
       "label": "首页图片 1",
       "alt": "Bath books and waterproof kids products"
     },
     {
       "id": "index-image-2",
       "original": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
-      "src": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
+      "src": "/website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
       "label": "首页图片 2",
       "alt": "Custom ring binders and stationery products"
     },
@@ -890,84 +890,84 @@
     {
       "id": "factory-0",
       "original": "website-images/Codex输出图片/工厂与品质/factory-exterior-no-cars.jpg",
-      "src": "website-images/Codex输出图片/工厂与品质/factory-exterior-no-cars.jpg",
+      "src": "/website-images/Codex输出图片/工厂与品质/factory-exterior-no-cars.jpg",
       "label": "工厂图片 1 · 工厂外观",
       "alt": "Factory exterior"
     },
     {
       "id": "factory-1",
       "original": "website-images/Codex输出图片/工厂与品质/sample-library-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/sample-library-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/sample-library-redacted.png",
       "label": "工厂图片 2 · 样品室",
       "alt": "Sample room"
     },
     {
       "id": "factory-2",
       "original": "website-images/Codex输出图片/工厂与品质/high-frequency-welding-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/high-frequency-welding-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/high-frequency-welding-redacted.png",
       "label": "工厂图片 3 · 高频焊接",
       "alt": "RF welding"
     },
     {
       "id": "factory-3",
       "original": "website-images/Codex输出图片/工厂与品质/workshop-high-frequency-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/workshop-high-frequency-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/workshop-high-frequency-redacted.png",
       "label": "工厂图片 4 · 高频焊接",
       "alt": "RF welding"
     },
     {
       "id": "factory-4",
       "original": "website-images/Codex输出图片/工厂与品质/production-line.png",
-      "src": "website-images/Codex输出图片/工厂与品质/production-line.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/production-line.png",
       "label": "工厂图片 5 · 印刷生产线",
       "alt": "Printing production line"
     },
     {
       "id": "factory-5",
       "original": "website-images/Codex输出图片/工厂与品质/film-laminating-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/film-laminating-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/film-laminating-redacted.png",
       "label": "工厂图片 6 · 切料生产",
       "alt": "Material cutting"
     },
     {
       "id": "factory-6",
       "original": "website-images/Codex输出图片/工厂与品质/manual-assembly-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/manual-assembly-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/manual-assembly-redacted.png",
       "label": "工厂图片 7 · 手工装配",
       "alt": "Manual assembly"
     },
     {
       "id": "factory-7",
       "original": "website-images/Codex输出图片/工厂与品质/team-inspection-redacted.png",
-      "src": "website-images/Codex输出图片/工厂与品质/team-inspection-redacted.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/team-inspection-redacted.png",
       "label": "工厂图片 8 · 员工培训",
       "alt": "Employee training"
     },
     {
       "id": "factory-8",
       "original": "website-images/Codex输出图片/工厂与品质/tooling-storage.png",
-      "src": "website-images/Codex输出图片/工厂与品质/tooling-storage.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/tooling-storage.png",
       "label": "工厂图片 9 · 模具管理",
       "alt": "Tooling management"
     },
     {
       "id": "factory-9",
       "original": "website-images/Codex输出图片/工厂与品质/container-loading.png",
-      "src": "website-images/Codex输出图片/工厂与品质/container-loading.png",
+      "src": "/website-images/Codex输出图片/工厂与品质/container-loading.png",
       "label": "工厂图片 10 · 装柜与发运",
       "alt": "Container loading & dispatch"
     },
     {
       "id": "category-baby",
       "original": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
-      "src": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
+      "src": "/website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg",
       "label": "首页洗澡书分类卡片",
       "alt": "Bath Books"
     },
     {
       "id": "category-office",
       "original": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
-      "src": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
+      "src": "/website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
       "label": "首页活页夹分类卡片",
       "alt": "Ring Binders"
     }

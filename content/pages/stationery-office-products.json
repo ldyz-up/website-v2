@@ -257,14 +257,14 @@
     {
       "id": "stationery-office-products-image-1",
       "original": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
-      "src": "website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
+      "src": "/website-images/Codex输出图片/办公及文具用品/活页本/floral-six-ring-binder-hero-web.jpg",
       "label": "页面图片 1",
       "alt": "Transparent six-ring binder with a delicate wildflower print and sage hardware"
     },
     {
       "id": "stationery-office-products-image-2",
       "original": "images/bsci-logo-transparent.png",
-      "src": "images/bsci-logo-transparent.png",
+      "src": "/images/bsci-logo-transparent.png",
       "label": "页面图片 2",
       "alt": "BSCI Business Social Compliance Initiative logo"
     }
