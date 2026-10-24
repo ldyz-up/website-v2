@@ -1,0 +1,26 @@
+{
+  "id": "bath-book-03",
+  "category": "baby",
+  "visible": true,
+  "order": 3,
+  "title": {
+    "zh": "洗澡书 03",
+    "en": "Bath Book 03",
+    "zh_tw": "洗澡書 03",
+    "ja": "バスブック 03",
+    "ko": "목욕책 03",
+    "fr": "Livre de bain 03"
+  },
+  "description": {
+    "zh": "",
+    "en": "",
+    "zh_tw": "",
+    "ja": "",
+    "ko": "",
+    "fr": ""
+  },
+  "image": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Bath Book/bath-book-03.png",
+  "thumbnail": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Bath Book/bath-book-03-thumb.jpg",
+  "thumbnail_for": "website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Bath Book/bath-book-03.png",
+  "gallery": []
+}

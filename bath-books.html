@@ -9,12 +9,16 @@
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="css/style.css?v=20260927-2">
   <link rel="stylesheet" href="css/bath-books.css?v=20260927-2">
+
+<link rel="stylesheet" href="css/managed-content.css">
+<script src="content/managed-data.js"></script>
+<script src="js/managed-content.js"></script>
 </head>
 <body>
   <header class="site-header bath-header">
     <div class="container header-inner">
       <a href="index.html#home" class="brand" aria-label="LongDe Yizhi home">
-        <img src="images/logo.png" alt="LongDe Yizhi Logo" class="brand-logo">
+        <img data-cms-image="logo" src="images/logo.png" alt="LongDe Yizhi Logo" class="brand-logo">
         <span class="brand-text"><span class="brand-name brand-name-latin">LongDe Yizhi</span></span>
       </a>
       <nav class="main-nav bath-nav" aria-label="Main navigation">
@@ -23,7 +27,7 @@
         <a href="index.html#factory">Factory</a>
         <a href="index.html#about">About</a>
       </nav>
-      <a href="index.html?category_id=baby&amp;product=Custom%20bath%20book#contact" class="btn btn-primary header-quote" data-i18n="quote" data-quote-link>Request a Quote</a>
+      <a href="index.html?category_id=baby&product=Custom%20bath%20book#contact" class="btn btn-primary header-quote" data-i18n="quote" data-quote-link="">Request a Quote</a>
       <div class="lang-switch bath-lang-switch" id="langSwitch" role="group" aria-label="Language">
         <button type="button" class="lang-icon-btn" data-lang="en">EN</button><button type="button" class="lang-icon-btn" data-lang="zh">中</button><button type="button" class="lang-icon-btn" data-lang="zh_tw">繁</button><button type="button" class="lang-icon-btn" data-lang="ja">日</button><button type="button" class="lang-icon-btn" data-lang="ko">한</button><button type="button" class="lang-icon-btn" data-lang="fr">FR</button>
         <select class="mobile-lang-select" id="mobileLangSelect" aria-label="Choose website language">
@@ -42,9 +46,9 @@
           <span class="section-tag" data-i18n="hero_tag">BATH BOOK AND WATERPROOF KIDS PRODUCTS</span>
           <h1 data-i18n="hero_title">Bath books and waterproof kids products, made for your brand.</h1>
           <p data-i18n="hero_desc">Explore our waterproof product range for baby and children's brands. We support OEM and ODM development across materials, shape, printing and packaging.</p>
-          <a class="btn btn-primary" href="index.html?category_id=baby&amp;product=Custom%20bath%20book#contact" data-i18n="quote" data-quote-link>Request a Quote</a>
+          <a class="btn btn-primary" href="index.html?category_id=baby&product=Custom%20bath%20book#contact" data-i18n="quote" data-quote-link="">Request a Quote</a>
         </div>
-        <img class="bath-hero-image" src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg" alt="Bath book and waterproof kids storage box" fetchpriority="high">
+        <img data-cms-image="bath-books-image-1" class="bath-hero-image" src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/category-hero-baby-kids-web.jpg" alt="Bath book and waterproof kids storage box" fetchpriority="high">
       </div>
     </section>
 
@@ -65,8 +69,8 @@
               <div><span class="section-tag" data-i18n="bath_tag">BATH BOOK</span><h2 data-i18n="bath_title">Bath book styles</h2></div>
               <p data-i18n="bath_desc">Click a product image to view it in detail. These styles are shown as examples of our manufacturing capability.</p>
             </div>
-            <p class="product-visual-note" id="bathVisualDisclosure"></p>
-            <div class="bath-gallery" id="bathGallery"></div>
+            <p data-cms-text="visual_disclosure" class="product-visual-note" id="bathVisualDisclosure"></p>
+            <div data-cms-products="baby" class="bath-gallery" id="bathGallery"></div>
             <button class="bath-gallery-more" id="bathGalleryMore" type="button" aria-controls="bathGallery" aria-expanded="false"></button>
           </div>
         </div>
@@ -75,12 +79,12 @@
 
     <section class="kids-products-section">
       <div class="container kids-products-inner">
-        <img src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Kids Products/blue-kids-storage-box-v1.png" alt="Waterproof kids storage box with original sea-creature print" loading="lazy">
+        <img data-cms-image="bath-books-image-2" src="website-images/Codex输出图片/Bath Book and Waterproof Kids Products/Kids Products/blue-kids-storage-box-v1.png" alt="Waterproof kids storage box with original sea-creature print" loading="lazy">
         <div>
           <span class="section-tag" data-i18n="kids_tag">KIDS PRODUCTS</span>
           <h2 data-i18n="kids_title">Waterproof kids storage products</h2>
           <p data-i18n="kids_desc">A practical, waterproof product format with room for your own colours, surface graphics and branding. Shown here with an original sea-life print as a customisation example.</p>
-          <a class="btn btn-primary" href="index.html?category_id=baby&amp;product=Waterproof%20children%27s%20product#contact" data-i18n="custom_cta">Discuss a custom design</a>
+          <a class="btn btn-primary" href="index.html?category_id=baby&product=Waterproof%20children%27s%20product#contact" data-i18n="custom_cta">Discuss a custom design</a>
         </div>
       </div>
     </section>
@@ -96,7 +100,7 @@
           <article><strong>🇩🇪 Germany</strong><p data-i18n="germany">EU Toy Safety Requirements, REACH, CE</p></article>
         </div>
         <p class="compliance-note" data-i18n="safety_note">Third-party testing can be arranged according to the customer's target market, product specifications and applicable requirements.</p>
-        <p class="compliance-note compliance-disclaimer" id="regulatoryDisclosure"></p>
+        <p data-cms-text="regulatory_disclosure" class="compliance-note compliance-disclaimer" id="regulatoryDisclosure"></p>
       </div>
     </section>
 
@@ -104,12 +108,12 @@
       <div class="container bath-capability-inner">
         <div><span class="section-tag" data-i18n="custom_tag">CUSTOMISATION</span><h2 data-i18n="custom_title">Built around your product brief.</h2></div>
         <div class="bath-capability-list"><span data-i18n="custom_1">Materials &amp; softness</span><span data-i18n="custom_2">Shape &amp; page count</span><span data-i18n="custom_3">Artwork &amp; printing</span><span data-i18n="custom_4">Packaging &amp; labelling</span></div>
-        <a class="btn btn-light" href="index.html?category_id=baby&amp;product=Custom%20bath%20book#contact" data-i18n="project_cta">Discuss your project</a>
+        <a class="btn btn-light" href="index.html?category_id=baby&product=Custom%20bath%20book#contact" data-i18n="project_cta">Discuss your project</a>
       </div>
     </section>
     <section class="bsci-proof" aria-labelledby="bsciTitle">
       <div class="container bsci-proof-inner">
-        <div class="bsci-proof-mark"><img src="images/bsci-logo-transparent.png" alt="BSCI Business Social Compliance Initiative logo" loading="lazy" width="900" height="600"></div>
+        <div class="bsci-proof-mark"><img data-cms-image="bath-books-image-3" src="images/bsci-logo-transparent.png" alt="BSCI Business Social Compliance Initiative logo" loading="lazy" width="900" height="600"></div>
         <div class="bsci-proof-copy"><span class="bsci-proof-kicker" data-i18n="bsci_tag">SOCIAL RESPONSIBILITY</span><h2 id="bsciTitle" data-i18n="bsci_title">BSCI social audit</h2><p data-i18n="bsci_desc">Our factory has undergone an amfori BSCI social audit. Audit documentation is available to qualified buyers on request.</p></div>
       </div>
     </section>
@@ -173,7 +177,7 @@
       };
       function applyLang(lang) {
         activeLanguage = lang;
-        const t = Object.assign({}, copy[lang] || copy.en, bsciCopy[lang] || bsciCopy.en);
+        const t = Object.assign({}, copy[lang] || copy.en, bsciCopy[lang] || bsciCopy.en, window.LDYZManaged ? window.LDYZManaged.pageText("bath-books", lang) : {});
         document.getElementById('bathVisualDisclosure').textContent = visualDisclosure[lang] || visualDisclosure.en;
         document.getElementById('regulatoryDisclosure').textContent = regulatoryDisclosure[lang] || regulatoryDisclosure.en;
         document.title = t.hero_title + ' | LongDe Yizhi';
@@ -186,7 +190,9 @@
           link.href = 'index.html?category_id=baby&product=Custom%20bath%20book&lang=' + encodeURIComponent(lang) + '#contact';
         });
         gallery.innerHTML = bookNumbers.map(function (n) { const id = String(n).padStart(2, '0'); const src = dir + 'bath-book-' + id + '.png'; const thumb = dir + 'bath-book-' + id + '-thumb.jpg'; return '<button class="bath-card" type="button" data-image="' + src + '" aria-label="' + t.book + id + '"><img src="' + thumb + '" alt="' + t.book + id + '" loading="lazy" decoding="async"><span>' + t.book + id + '</span></button>'; }).join('');
+        if (window.LDYZManaged) window.LDYZManaged.renderProducts(gallery, "baby", lang);
         galleryMore.textContent = galleryLabels[lang][galleryExpanded ? 1 : 0];
+        if (window.LDYZManaged) window.LDYZManaged.updateGalleryButton(galleryMore, lang, galleryExpanded);
       }
       let preferred = 'en';
       try { preferred = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('longde_site_lang') || 'en'; } catch (error) { /* File previews may block storage. */ }
@@ -198,6 +204,7 @@
         gallery.classList.toggle('is-expanded', galleryExpanded);
         galleryMore.setAttribute('aria-expanded', String(galleryExpanded));
         galleryMore.textContent = galleryLabels[activeLanguage][galleryExpanded ? 1 : 0];
+        if (window.LDYZManaged) window.LDYZManaged.updateGalleryButton(galleryMore, activeLanguage, galleryExpanded);
       });
       gallery.addEventListener('click', function (event) {
         const card = event.target.closest('.bath-card');

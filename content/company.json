@@ -1,0 +1,136 @@
+{
+  "translations": {
+    "zh": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "龙德益智（东莞）新材料有限公司",
+      "about_p1": "龙德益智位于中国东莞，围绕洗澡书、活页夹及其他软质塑料产品承接定制项目。",
+      "about_p2": "我们与客户沟通产品需求，并围绕确认的材料、样品、生产、检验与包装要求推进项目。",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "定制制造",
+      "contact_language_prompt": "选择询价表单语言：",
+      "contact_language_group": "选择询价表单语言",
+      "contact_addr_label": "公司地址",
+      "contact_addr": "广东省东莞市寮步镇进士路56号2栋301室",
+      "contact_email_label": "邮箱",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "工作时间",
+      "contact_hours": "周一至周六 8:30 – 18:00"
+    },
+    "en": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "LongDe Yizhi (Dongguan) New Materials Co., Ltd.",
+      "about_p1": "Based in Dongguan, China, LongDe Yizhi develops custom bath books, ring binders and other soft-plastic products.",
+      "about_p2": "We work with customers to align requirements and coordinate materials, sample approval, production, inspection and packaging for B2B projects.",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "Custom Manufacturing",
+      "contact_language_prompt": "View this inquiry form in:",
+      "contact_language_group": "Choose inquiry form language",
+      "contact_addr_label": "Address",
+      "contact_addr": "Room 301, Building 2, No. 56 Jinshi Road, Liaobu Town, Dongguan, Guangdong, China",
+      "contact_email_label": "Email",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "Working Hours",
+      "contact_hours": "Mon – Sat, 8:30 – 18:00"
+    },
+    "zh_tw": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "龍德益智（東莞）新材料有限公司",
+      "about_p1": "龍德益智位於中國東莞，承接洗澡書、活頁本及其他軟質塑膠產品的客製專案。",
+      "about_p2": "我們與客戶溝通產品需求，並依確認的材料、樣品、生產、檢查與包裝要求推進專案。",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "客製製造",
+      "contact_language_prompt": "選擇詢價表單語言：",
+      "contact_language_group": "選擇詢價表單語言",
+      "contact_addr_label": "公司地址",
+      "contact_addr": "廣東省東莞市寮步鎮進士路56號2棟301室",
+      "contact_email_label": "電子郵件",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "工作時間",
+      "contact_hours": "週一至週六 8:30 – 18:00"
+    },
+    "ja": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "龍德益智（東莞）新材料有限公司",
+      "about_p1": "LongDe Yizhi は中国・東莞を拠点に、バスブック、リングバインダーなど軟質プラスチック製品のカスタム案件に対応します。",
+      "about_p2": "お客様と仕様を確認し、材料、サンプル承認、生産、検査、包装の要件に沿ってプロジェクトを進めます。",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "カスタム製造",
+      "contact_language_prompt": "お問い合わせフォームの言語：",
+      "contact_language_group": "お問い合わせフォームの言語を選択",
+      "contact_addr_label": "所在地",
+      "contact_addr": "中国広東省東莞市寮歩鎮進士路56号2棟301室",
+      "contact_email_label": "メール",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "営業時間",
+      "contact_hours": "月～土 8:30 – 18:00"
+    },
+    "ko": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "룽더이즈(둥관) 신소재 유한회사",
+      "about_p1": "LongDe Yizhi는 중국 둥관을 기반으로 목욕책, 링 바인더 및 기타 연질 플라스틱 제품의 맞춤 프로젝트를 진행합니다.",
+      "about_p2": "고객과 요구사항을 확인하고 소재, 샘플 승인, 생산, 검사 및 포장 조건에 따라 B2B 프로젝트를 진행합니다.",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "맞춤 제조",
+      "contact_language_prompt": "문의 양식 언어 선택:",
+      "contact_language_group": "문의 양식 언어 선택",
+      "contact_addr_label": "주소",
+      "contact_addr": "중국 광둥성 둥관시 랴오부진 진스루 56호 2동 301호",
+      "contact_email_label": "이메일",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "근무 시간",
+      "contact_hours": "월~토 8:30 – 18:00"
+    },
+    "fr": {
+      "brand_short": "LongDe Yizhi",
+      "brand_name": "LongDe Yizhi (Dongguan) New Materials Co., Ltd.",
+      "about_p1": "Basée à Dongguan, en Chine, LongDe Yizhi développe des livres de bain, classeurs à anneaux et autres produits souples sur mesure.",
+      "about_p2": "Nous alignons les exigences avec nos clients et coordonnons matières, validation d’échantillon, production, contrôle et emballage pour les projets B2B.",
+      "about_values__0": "EVA · TPU · PVC",
+      "about_values__1": "OEM / ODM",
+      "about_values__2": "Fabrication sur mesure",
+      "contact_language_prompt": "Afficher ce formulaire dans :",
+      "contact_language_group": "Choisir la langue du formulaire de demande",
+      "contact_addr_label": "Adresse",
+      "contact_addr": "Salle 301, Bâtiment 2, n° 56 route Jinshi, ville de Liaobu, Dongguan, Guangdong, Chine",
+      "contact_email_label": "E-mail",
+      "contact_email": "sales@longdeyizhi.com",
+      "contact_hours_label": "Horaires",
+      "contact_hours": "Lun – Sam, 8h30 – 18h00"
+    }
+  },
+  "images": [
+    {
+      "id": "logo",
+      "original": "images/logo.png",
+      "src": "images/logo.png",
+      "label": "网站 Logo",
+      "alt": "LongDe Yizhi Logo"
+    },
+    {
+      "id": "qr-wechat-1",
+      "original": "images/qr-wechat-1.png",
+      "src": "images/qr-wechat-1.png",
+      "label": "客服二维码 · qr-wechat-1.png",
+      "alt": "WeChat Support 1"
+    },
+    {
+      "id": "qr-wechat-2",
+      "original": "images/qr-wechat-2.png",
+      "src": "images/qr-wechat-2.png",
+      "label": "客服二维码 · qr-wechat-2.png",
+      "alt": "WeChat Support 2"
+    },
+    {
+      "id": "qr-line",
+      "original": "images/qr-line.png",
+      "src": "images/qr-line.png",
+      "label": "客服二维码 · qr-line.png",
+      "alt": "LINE Support"
+    }
+  ]
+}

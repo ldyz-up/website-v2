@@ -1,0 +1,21 @@
+{
+  "name": "ldyz-content-admin-preview",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/preview.mjs",
+    "build:content": "node scripts/build-content.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "decap-cms-app": "3.17.1",
+    "decap-server": "3.11.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "linkedom": "0.18.14"
+  }
+}

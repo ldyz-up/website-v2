@@ -1,0 +1,26 @@
+{
+  "id": "binder-3",
+  "category": "office",
+  "visible": true,
+  "order": 3,
+  "title": {
+    "zh": "摇摇乐活页夹",
+    "en": "Shaker binder",
+    "zh_tw": "搖搖樂活頁夾",
+    "ja": "シェーカーバインダー",
+    "ko": "셰이커 바인더",
+    "fr": "Classeur shaker"
+  },
+  "description": {
+    "zh": "",
+    "en": "",
+    "zh_tw": "",
+    "ja": "",
+    "ko": "",
+    "fr": ""
+  },
+  "image": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-main.png",
+  "thumbnail": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-main-thumb.jpg",
+  "thumbnail_for": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-main.png",
+  "gallery": []
+}

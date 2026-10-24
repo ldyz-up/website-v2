@@ -1,0 +1,26 @@
+{
+  "id": "binder-4",
+  "category": "office",
+  "visible": true,
+  "order": 4,
+  "title": {
+    "zh": "摇摇乐活页夹场景",
+    "en": "Shaker binder in use",
+    "zh_tw": "搖搖樂活頁夾情境",
+    "ja": "シェーカーバインダー使用例",
+    "ko": "셰이커 바인더 사용 장면",
+    "fr": "Classeur shaker en situation"
+  },
+  "description": {
+    "zh": "",
+    "en": "",
+    "zh_tw": "",
+    "ja": "",
+    "ko": "",
+    "fr": ""
+  },
+  "image": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-scene.png",
+  "thumbnail": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-scene-thumb.jpg",
+  "thumbnail_for": "website-images/Codex输出图片/办公及文具用品/活页本/shaker-six-ring-binder-scene.png",
+  "gallery": []
+}

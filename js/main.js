@@ -5,6 +5,7 @@
 
 (function () {
   "use strict";
+  if (window.LDYZManaged) window.LDYZManaged.mergeTranslations(TRANSLATIONS);
 
   const LANGS = ["en", "zh", "zh_tw", "ja", "ko", "fr"];
   const LANG_NAMES = { en: "English", zh: "中文", zh_tw: "繁體中文", ja: "日本語", ko: "한국어", fr: "Français" };
@@ -74,7 +75,7 @@
   }
 
   function esc(s) {
-    return String(s == null ? "" : s);
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; });
   }
 
   function getCategories(t) {

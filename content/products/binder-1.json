@@ -1,0 +1,26 @@
+{
+  "id": "binder-1",
+  "category": "office",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "zh": "透明活页夹",
+    "en": "Transparent binder",
+    "zh_tw": "透明活頁夾",
+    "ja": "透明バインダー",
+    "ko": "투명 바인더",
+    "fr": "Classeur transparent"
+  },
+  "description": {
+    "zh": "",
+    "en": "",
+    "zh_tw": "",
+    "ja": "",
+    "ko": "",
+    "fr": ""
+  },
+  "image": "website-images/Codex输出图片/办公及文具用品/活页本/transparent-six-ring-binder-main.png",
+  "thumbnail": "website-images/Codex输出图片/办公及文具用品/活页本/transparent-six-ring-binder-main-thumb.jpg",
+  "thumbnail_for": "website-images/Codex输出图片/办公及文具用品/活页本/transparent-six-ring-binder-main.png",
+  "gallery": []
+}
